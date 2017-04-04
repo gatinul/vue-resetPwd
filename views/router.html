@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/bar">Go to Bar</router-link>
+        <router-link to="/user/1/prolife">Go to prolife</router-link>
+        <router-link to="/load/1">Load I</router-link>
+        <router-link to="/load/2">Load II</router-link>
+      </p>
+      <button @click="back">后退</button>
+      <router-view></router-view>
+      <router-view name="right"></router-view>
+      <router-view name="bottom"></router-view>
+    </div>
+    <script src="../_build/based.js"></script>
+    <script src="../_build/apps/router/app.js"></script>
+  </body>
+</html>

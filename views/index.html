@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			{{message}}
+		</div>
+		<div id="app-2">
+			<span v-bind:title="message">
+				鼠标悬停可见
+			</span>
+		</div>
+		<div id="app-3">
+			<p v-if="show">something is show or hide</p>
+		</div>
+		<div id="app-4">
+			<ol>
+				<li v-for="todo in todos">
+					{{todo.text}}
+				</li>
+			</ol>
+		</div>
+		<div id="app-5">
+			<p>{{message}}</p>
+			<button @click="reverseMessage">反转上方文字</button>
+		</div>
+		<div id="app-6">
+			<p>{{message}}</p>
+			<input v-model="message">
+		</div>
+		<div id="app-7">
+			<ol>
+				<todo-item v-for="item in myList" v-bind:todos="item"></todo-item>
+			</ol>
+		</div>
+		<script src="../dist/index.js"></script>
+	</body>
+</html>

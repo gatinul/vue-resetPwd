@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="example">
+
+		</div>
+		<div id="gatinul">
+			<p>原始数组：{{array}}</p>
+			<p>增加数字：{{addNumber}}</p>
+		</div>
+		<div id="gati-point"></div>
+		<div id="demo">{{fullName}}</div>
+		<div id="watch-example">
+			<p>
+				Ask a question:
+				<input v-model="question">
+			</p>
+			<p>{{answer}}</p>
+			<!-- v-bind:src 缩写为:src -->
+			<img :src="image">
+		</div>
+		<div id="for-example">
+			<div v-for="(value,key) in object">
+				{{key}} : {{value}}
+			</div>
+			<span v-for="n in 6">{{n}}</span>
+		</div>
+		<script src="../dist/index1.js"></script>
+	</body>
+</html>
