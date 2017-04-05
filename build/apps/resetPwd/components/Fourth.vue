@@ -1,15 +1,8 @@
 <template lang="html">
-  <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
-    <el-form-item label="名称4">
-      <el-input v-model="formLabelAlign.name"></el-input>
-    </el-form-item>
-    <el-form-item label="活动区域4">
-      <el-input v-model="formLabelAlign.region"></el-input>
-    </el-form-item>
-    <el-form-item label="活动形式4">
-      <el-input v-model="formLabelAlign.type"></el-input>
-    </el-form-item>
-  </el-form>
+  <div class="elLastForm">
+    <i class="el-icon-circle-check"> 修改成功 </i>
+    <p>新密码将在10分钟后生效</p>
+  </div>
 </template>
 
 <script>
@@ -31,6 +24,7 @@ export default {
         vm.$router.replace('/first')
       }else{
         vm.$store.state.active = 4;
+        vm.$loading().close()
       }
     })
   }
@@ -38,4 +32,9 @@ export default {
 </script>
 
 <style lang="css">
+.elLastForm{
+  position: relative;
+  width: 270px;
+  margin: 100px auto;
+}
 </style>

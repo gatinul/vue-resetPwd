@@ -15,6 +15,8 @@
   |- app.js  ---------------------------------- webpack入口文件
 |- views/
   |- resetPwd.html  --------------------------- HTML 模板
+|- routes
+  |- index.js  -------------------------------- express数据库操作
 |- .babelrc  ---------------------------------- babel 配置文件
 |- package.json  ------------------------------ npm 配置文件
 |- server.js  --------------------------------- 项目入口文件
@@ -27,6 +29,8 @@
 - [vue-router](http://router.vuejs.org/zh-cn/)
 - [vuex](http://vuex.vuejs.org/zh-cn/intro.html)
 - [ElementUI](http://element.eleme.io/#/zh-CN)
+- mysql
+- express
 
 ## 使用
 
@@ -38,10 +42,6 @@ npm run dev
 localhost:8080/resetPwd.html
 ```
 
-## 页面截图
-
-![图片](https://github.com/gatinul/vue-resetPWd/raw/master/Screenshots/screen.png)
-
 ## Todo
 
-- Node+Mysql验证、存储用户及密码信息
+- ~~Node+Mysql验证、存储用户及密码信息~~

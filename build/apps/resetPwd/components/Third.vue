@@ -56,9 +56,22 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          // 差一步ajax
-          this.$store.state.flag = 4;
-          this.$router.replace('/fourth')
+          //var vue = this
+          this.$loading({text:'请稍后...'});
+          this.axios.post('/changePwd',{
+            'pwd':this.ruleForm2.pass,
+            'staffId':this.$store.state.staffId
+          }).then(response => {
+            let data = response.data
+            if(data == 'success'){
+              this.$store.state.flag =4 ;
+              this.$router.replace('/fourth')
+            }else{
+              console.log('参数有误')
+              this.$loading().close();
+              this.$message.error('员工账号不存在或错误');
+            }
+          })
         } else {
           console.log('error submit!!');
           return false;
@@ -73,6 +86,7 @@ export default {
         vm.$router.replace('/first')
       }else{
         vm.$store.state.active = 3;
+        vm.$loading().close()
       }
     })
   }

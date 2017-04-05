@@ -17,8 +17,8 @@
         <el-input type="email" v-model="ruleForm.staffEmail"></el-input>
       </el-form-item>
       <el-form-item>
-        <!-- <el-button type="primary" class="nextBtn" @click="submitForm('ruleForm')">下一步</el-button> -->
-        <el-button type="primary" class="nextBtn" @click="test">下一步</el-button>
+        <el-button type="primary" class="nextBtn" @click="submitForm('ruleForm')">下一步</el-button>
+        <!-- <el-button type="primary" class="nextBtn" @click="test">下一步</el-button> -->
       </el-form-item>
     </el-form>
   </div>
@@ -46,7 +46,8 @@ export default {
         ruleForm: {
           staffId: '',
           staffName: '',
-          staffPhone: ''
+          staffPhone: '',
+          staffEmail: ''
         },
         rules: {
           staffId: [
@@ -75,8 +76,24 @@ export default {
         this.$refs[formName].validate((valid) => {
           if (valid) {
             // 差一步ajax
-            this.$store.state.flag = 2;
-            this.$router.replace('/second')
+            this.$loading({text:'请稍后...'});
+            this.axios.post('/validate',{
+              'staffId':this.ruleForm.staffId,
+              'staffName':this.ruleForm.staffName,
+              'staffPhone':this.ruleForm.staffPhone,
+              'staffEmail':this.ruleForm.staffEmail
+            }).then(response=>{
+              let data = response.data;
+              if(data == 'success'){
+                this.$store.state.flag = 2;
+                this.$store.state.staffId = this.ruleForm.staffId
+                this.$router.replace('/second')
+              }else{
+                console.log('验证失败')
+                this.$loading().close();
+                this.$message.error(data);
+              }
+            })
           } else {
             console.log('error submit!!');
             return false;
