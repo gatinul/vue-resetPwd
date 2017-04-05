@@ -14,7 +14,7 @@ Vue.use(ElementUI)
 const store = new Vuex.Store({
   state:{
     active:1,
-    falg:0
+    flag:0
   },
   mutations: {
     next(state){

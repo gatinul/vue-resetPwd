@@ -1,3 +1,5 @@
+使用vue-router & ElementUI实现密码重置功能单页面应用
+
 ## 目录结构
 
 ```
@@ -19,3 +21,27 @@
 |- webpack.config.js  ------------------------- webpack 配置文件
 ```
 
+## 需要
+
+- [vue2.0](http://cn.vuejs.org/)
+- [vue-router](http://router.vuejs.org/zh-cn/)
+- [vuex](http://vuex.vuejs.org/zh-cn/intro.html)
+- [ElementUI](http://element.eleme.io/#/zh-CN)
+
+## 使用
+
+```bash
+# 启动webpack打包
+npm run dev 
+
+# 本地进行访问
+localhost:8080/resetPwd.html
+```
+
+## 页面截图
+
+![图片](https://github.com/gatinul/vue-resetPWd/raw/master/Screenshots/screen.png)
+
+## Todo
+
+- Node+Mysql验证、存储用户及密码信息

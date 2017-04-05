@@ -15,5 +15,5 @@ const routes = [
 ]
 
 export default new VueRouter({
-  routes
+  routes // 相当于routes:routes
 })
